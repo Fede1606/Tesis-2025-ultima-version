@@ -49,7 +49,7 @@ private IEnumerator FinalizarJuego()
 }
 
 
-	private int vidas = 3;
+	private int vidas = 1;
 
 	private void Awake()
 {
