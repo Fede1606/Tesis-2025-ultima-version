@@ -10,7 +10,7 @@ public class EndLevel : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Verifica si el objeto que ha entrado en el trigger es el jugador.
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("player"))
         {
             // Carga la escena del menú principal
             SceneManager.LoadScene(MainMenu);
@@ -21,7 +21,7 @@ public class EndLevel : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Alternativa: Si usas colisiones físicas en lugar de triggers
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("player"))
         {
             // Carga la escena del menú principal
             SceneManager.LoadScene(MainMenu);
