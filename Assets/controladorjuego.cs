@@ -1,15 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class controladorjuego : MonoBehaviour
 {
     [SerializeField] private float tiempomaximo;
-
+    [SerializeField] private Slider slider;
     private float tiempoActual;
     private bool tiempoActivado = false;
-    private void Start()
-    {
-        ActivarTemporizador();
-    }
+    
 
     private void Update()
     {
@@ -23,9 +21,14 @@ public class controladorjuego : MonoBehaviour
     private void Cambiarcontador()
     {
         tiempoActual -= Time.deltaTime;
+        if(tiempoActual >= 0){
+            slider.value=tiempoActual;
+            slider.maxValue=tiempomaximo;
+
+        }
         if (tiempoActual <= 0)
         {
-
+            
 
             Debug.Log("¡Tiempo terminado!");
             CambiarTemporizador(false);
