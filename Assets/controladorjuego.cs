@@ -5,6 +5,8 @@ public class controladorjuego : MonoBehaviour
 {
     [SerializeField] private float tiempomaximo;
     [SerializeField] private Slider slider;
+    [SerializeField] private GameObject MenuGameOver; // 👈 tu pantalla de game over
+
     private float tiempoActual;
     private bool tiempoActivado = false;
     
@@ -15,25 +17,25 @@ public class controladorjuego : MonoBehaviour
         {
             Cambiarcontador();
         }
-
     }
 
     private void Cambiarcontador()
     {
         tiempoActual -= Time.deltaTime;
-        if(tiempoActual >= 0){
-            slider.value=tiempoActual;
-            slider.maxValue=tiempomaximo;
 
-        }
-        if (tiempoActual <= 0)
+        if (tiempoActual > 0)
         {
-            
-
-            Debug.Log("¡Tiempo terminado!");
-            CambiarTemporizador(false);
+            slider.value = tiempoActual;
+            slider.maxValue = tiempomaximo;
         }
+        else
+        {
+            Debug.Log("¡Tiempo terminado!");
+            GameManager.Instance.PerderVida();
+        }
+
     }
+
     private void CambiarTemporizador(bool estado)
     {
         tiempoActivado = estado;
