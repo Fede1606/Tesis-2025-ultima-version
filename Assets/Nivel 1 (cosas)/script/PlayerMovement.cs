@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Movimiento horizontal con física
         float horizontal = Input.GetAxis("Horizontal");
-        rd.linearVelocity = new Vector2(horizontal * velocidad, rd.linearVelocity.y); // corregido: `velocity`, no `linearVelocity`
+        rd.linearVelocity = new Vector2(horizontal * velocidad, rd.linearVelocity.y); 
 
         // Animación de movimiento
         animator.SetFloat("movement", Mathf.Abs(horizontal));
