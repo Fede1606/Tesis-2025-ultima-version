@@ -9,6 +9,7 @@ TagManager:
   - player
   - ComidaMala
   - comidabuena
+  - Paddle
   layers:
   - Default
   - TransparentFX

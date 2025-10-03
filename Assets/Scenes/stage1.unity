@@ -1509,6 +1509,10 @@ PrefabInstance:
       propertyPath: puntoFinal
       value: 
       objectReference: {fileID: 360838790}
+    - target: {fileID: 1360164330589159525, guid: 026d6a16692ef41458cf380aae4435e0, type: 3}
+      propertyPath: partesNivel.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2274312510082121396, guid: 026d6a16692ef41458cf380aae4435e0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3706896
@@ -1627,6 +1631,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1386252130494270975, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2318925155904753313, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2858472279941261812, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1670,6 +1682,10 @@ PrefabInstance:
     - target: {fileID: 3155886805071703165, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
       propertyPath: m_Name
       value: canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690448809843912868, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8431523514613968524, guid: 044e2fbf03d8ccd468f824f6b0b56102, type: 3}
       propertyPath: m_IsActive
