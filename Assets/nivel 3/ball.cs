@@ -29,9 +29,19 @@ public class Ball : MonoBehaviour
         }
     }
 
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision) // <-- Corregido
     {
-        // Aquí podrías reiniciar la bola si se sale de los límites, por ejemplo
+        if (collision.gameObject.CompareTag("Goal1"))
+        {
+            GameManagerLevel3.Instance.Paddle2Score();
+            GameManagerLevel3.Instance.Restart();
+            Launch();
+        }
+        else if (collision.gameObject.CompareTag("Goal2"))
+        {
+            GameManagerLevel3.Instance.Paddle1Score();
+            GameManagerLevel3.Instance.Restart();
+            Launch();
+        }
     }
 }
-
