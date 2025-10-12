@@ -4,7 +4,8 @@ using TMPro;
 
 public class HUD : MonoBehaviour
 {
-    public GameManager gameManager ;
+    public GameManagerNivel1 gameManagerNivel1;
+	public GameManagerNivel2 gameManagerNivel2;	
 	
 	void Update() {
 

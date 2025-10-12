@@ -12,7 +12,7 @@ public class managerPuntos : MonoBehaviour
             Destroy(col.gameObject);
         }
         
-        GameManager.Instance.RevisarPuntos(Puntos.ValPunTos);
+        GameManagerNivel1.Instance.RevisarPuntos(Puntos.ValPunTos);
     }
 
     

@@ -6,7 +6,7 @@ public class ComidaMala : MonoBehaviour
     {
         if (other.gameObject.CompareTag("player"))
         {
-            GameManager.Instance.PerderVida();
+            GameManagerNivel1.Instance.PerderVida();
             Destroy(this.gameObject);
         } 
         

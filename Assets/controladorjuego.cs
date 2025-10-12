@@ -31,7 +31,7 @@ public class controladorjuego : MonoBehaviour
         else
         {
             Debug.Log("¡Tiempo terminado!");
-            GameManager.Instance.PerderVida();
+            GameManagerNivel2.Instance.PerderVida();
         }
 
     }
