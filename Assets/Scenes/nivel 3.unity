@@ -842,7 +842,7 @@ Transform:
   m_GameObject: {fileID: 468437290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.99998957, w: -0.0045747273}
-  m_LocalPosition: {x: 7.95, y: 0.108109, z: -15}
+  m_LocalPosition: {x: 7.7, y: 0.108109, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1635,6 +1635,8 @@ MonoBehaviour:
   paddle1Transform: {fileID: 468437295}
   paddle2Transform: {fileID: 1335596939}
   ballTransform: {fileID: 616125400}
+  puntosParaGanar: 5
+  victoriaText: {fileID: 0}
 --- !u!4 &866704763
 Transform:
   m_ObjectHideFlags: 0
@@ -2146,7 +2148,7 @@ Transform:
   m_GameObject: {fileID: 1335596934}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0090441415, w: -0.9999591}
-  m_LocalPosition: {x: -8.19, y: -0.29471922, z: -15}
+  m_LocalPosition: {x: -8.04, y: -0.29471922, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

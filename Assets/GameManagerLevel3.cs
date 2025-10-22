@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManagerLevel3 : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManagerLevel3 : MonoBehaviour
     [SerializeField] private Transform paddle1Transform;
     [SerializeField] private Transform paddle2Transform;
     [SerializeField] private Transform ballTransform;
+    [SerializeField] private int puntosParaGanar = 5;
+    [SerializeField] private TMP_Text victoriaText;
 
     private int paddle1Score;
     private int paddle2Score;
@@ -29,12 +32,30 @@ public class GameManagerLevel3 : MonoBehaviour
     {
         paddle1Score++;
         paddle1ScoreText.text = paddle1Score.ToString();
+
+        if (paddle1Score >= puntosParaGanar)
+        {
+            Ganar();
+        }
     }
 
     public void Paddle2Score()
     {
         paddle2Score++;
         paddle2ScoreText.text = paddle2Score.ToString();
+
+        if (paddle2Score >= puntosParaGanar)
+        {
+            Ganar();
+        }
+    }
+
+    private void Ganar()
+    {
+        Time.timeScale = 0f; // pausa el juego
+
+        // Si querés cambiar de escena:
+        // SceneManager.LoadScene("IntermedioN3aFinal");
     }
 
     public void Restart()

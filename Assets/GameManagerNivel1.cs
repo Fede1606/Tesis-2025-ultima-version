@@ -46,15 +46,9 @@ public class GameManagerNivel1 : MonoBehaviour
         PlayerMovement jugador = FindObjectOfType<PlayerMovement>();
         if (jugador != null) jugador.BloquearMovimiento();
 
-        for (int i = 0; i < 3; i++)
-        {
-            if (jugador != null) jugador.SaltarAnimacion();
-            yield return new WaitForSeconds(1f);
-        }
-
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("IntermedioN1aN2");
+        yield break;
     }
-
     public void Perdiste()
     {
         Puntos.ValPunTos = 0;
