@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerSoundController PlayerSoundController;
     public float velocidad = 5f;
     public float fuerzasalto = 10f;
     public float longitudRaycast = 0.2f;
@@ -29,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Movimiento horizontal con física
         float horizontal = Input.GetAxis("Horizontal");
-        rd.linearVelocity = new Vector2(horizontal * velocidad, rd.linearVelocity.y); 
+        rd.linearVelocity = new Vector2(horizontal * velocidad, rd.linearVelocity.y);
 
         // Animación de movimiento
         animator.SetFloat("movement", Mathf.Abs(horizontal));
@@ -45,10 +46,29 @@ public class PlayerMovement : MonoBehaviour
         enSuelo = hit.collider != null;
         animator.SetBool("ensuelo", enSuelo);
 
+        // 🔊 Control de sonido de pasos
+        if (enSuelo && Mathf.Abs(horizontal) > 0.1f)
+        {
+            // Si se mueve y no está sonando, lo inicia
+            if (!PlayerSoundController.IsStepSoundPlaying())
+            {
+                PlayerSoundController.PlayStepSound();
+            }
+        }
+        else
+        {
+            // Si no se mueve o está en el aire, lo detiene
+            if (PlayerSoundController.IsStepSoundPlaying())
+            {
+                PlayerSoundController.StopStepSound();
+            }
+        }
+
         // Salto
         if (enSuelo && Input.GetKeyDown(KeyCode.Space))
         {
             rd.AddForce(Vector2.up * fuerzasalto, ForceMode2D.Impulse);
+            PlayerSoundController.PlayJumpSound();
         }
     }
 
@@ -63,14 +83,14 @@ public class PlayerMovement : MonoBehaviour
     public void BloquearMovimiento()
     {
         puedeMoverse = false;
+        PlayerSoundController.StopStepSound(); // detiene sonido si se bloquea
     }
 
-    // Reproduce la animación de salto
     public void SaltarAnimacion()
     {
         if (animator != null)
         {
-            animator.SetTrigger("jump"); // Asegúrate que el trigger se llama exactamente "jump"
+            animator.SetTrigger("jump");
         }
     }
 }
